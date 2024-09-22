@@ -31,11 +31,14 @@ main {
 }
 
 .gradient-text {
+  /* this gradient is taken from uiGradient.
+     I learned this gradient text trick from YouTube  */
   background: linear-gradient(75deg, #f953c6, #b91d73);
   background-clip: text;
   color: transparent;
 }
 
+/* All neumorphism box-shadows are generated and adapted using neumorphism.io */
 .neumorphism-out {
   background: var(--background);
   box-shadow:

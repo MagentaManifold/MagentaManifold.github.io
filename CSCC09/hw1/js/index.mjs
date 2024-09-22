@@ -28,6 +28,7 @@ function update() {
   prevImageId = getPrevImageId(currentImageId);
   nextImageId = getNextImageId(currentImageId);
 
+  //check if at least one image exists, show/hide components accordingly.
   if (currentImageId === null) {
     for (const elmt of document.getElementsByClassName("requires-image")) {
       elmt.style.display = "none";
@@ -42,6 +43,7 @@ function update() {
   }
   document.getElementById("no-image").style.display = "none";
 
+  //enable/disable image navigation buttons
   if (prevImageId === null) {
     prevImageBtn.disabled = true;
     prevImageBtn.title = "No newer images";
@@ -58,6 +60,7 @@ function update() {
     nextImageBtn.title = "Next image";
   }
 
+  //set state of comment related components
   const comments = getComments(currentImageId);
   const commentCount = comments.length;
 
@@ -83,6 +86,7 @@ function update() {
     nextCommentsBtn.title = "Older comments";
   }
 
+  //display image
   const image = getImage(currentImageId);
 
   document.getElementById("image").src = image.url;
@@ -92,6 +96,7 @@ function update() {
   document.getElementById("upload-date").innerText =
     image.date.toLocaleString();
 
+  //display comments
   document.getElementById("comment-list").innerHTML = "";
   for (const comment of comments.slice(
     commentPageNo * 10,
@@ -122,6 +127,7 @@ function update() {
   }
 }
 
+//form submission
 const addImageForm = document.querySelector("#add-image-form");
 addImageForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -146,6 +152,7 @@ addCommentForm.addEventListener("submit", (e) => {
   update();
 });
 
+//Previous/next buttons
 prevImageBtn.addEventListener("click", () => {
   currentImageId = prevImageId;
   update();
@@ -166,6 +173,7 @@ nextCommentsBtn.addEventListener("click", () => {
   update();
 });
 
+//delete image
 document.getElementById("delete-image").addEventListener("click", () => {
   deleteImage(currentImageId);
   if (nextImageId != null) {
