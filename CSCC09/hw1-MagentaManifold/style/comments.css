@@ -1,0 +1,84 @@
+#add-comment {
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  font-size: 1.3rem;
+}
+
+#comment-content {
+  resize: vertical;
+  min-height: 1.3rem;
+}
+
+#comments-title {
+  margin-top: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+#comments-title span {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.comment {
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  margin: 4px;
+  background-image: url("../media/user.svg");
+  background-size: 2.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 3.5rem;
+  min-width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  box-shadow:
+    4px 4px 8px var(--neumorpohism-shadow-dark),
+    -4px -4px 8px var(--neumorpohism-shadow-light);
+}
+
+.comment-container {
+  padding: 0.5rem;
+  flex-grow: 1;
+}
+
+.author-and-date {
+  display: flex;
+  align-items: center;
+  column-gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.username {
+  color: var(--theme);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.comment-date {
+  color: darkgray;
+  font-size: 0.8rem;
+}
+
+.comment-date::before {
+  content: "@ ";
+}
+
+.comment-content {
+  font-size: 0.85rem;
+  text-align: justify;
+  word-break: break-all;
+}

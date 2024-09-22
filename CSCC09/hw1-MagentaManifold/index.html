@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web Gallery</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="style/main.css" rel="stylesheet" />
+    <link href="style/button.css" rel="stylesheet" />
+    <link href="style/header.css" rel="stylesheet" />
+    <link href="style/form.css" rel="stylesheet" />
+    <link href="style/image-display.css" rel="stylesheet" />
+    <link href="style/comments.css" rel="stylesheet" />
+    <script type="module" src="js/index.mjs"></script>
+    <script type="module" src="js/api.mjs"></script>
+  </head>
+
+  <body>
+    <header id="header" class="neumorphism-out">
+      <h1><span class="gradient-text">WEB</span>GALLERY</h1>
+      <a href="/credits.html">Credits</a>
+    </header>
+    <main>
+      <div id="add-image" class="neumorphism-out">
+        <div class="form-title">
+          <label title="Show/hide the form" class="toggle-show">
+            <input type="checkbox" />
+          </label>
+          Add an image
+        </div>
+        <form id="add-image-form" class="input-form">
+          <input
+            type="text"
+            id="image-title-input"
+            class="text-input neumorphism-in"
+            name="title"
+            placeholder="Title"
+            required
+          />
+          <input
+            type="text"
+            id="image-author-input"
+            class="text-input neumorphism-in"
+            name="author"
+            placeholder="Author"
+            required
+          />
+          <input
+            type="url"
+            id="image-url-input"
+            class="text-input neumorphism-in"
+            name="url"
+            placeholder="Image URL"
+            required
+          />
+          <button type="submit" title="Submit image" class="btn">Submit</button>
+        </form>
+      </div>
+      <div class="image-display neumorphism-out requires-image">
+        <button
+          type="button"
+          title="Delete this image"
+          class="btn-round btn-delete"
+          id="delete-image"
+        ></button>
+        <div class="image-and-control">
+          <button
+            title="Previous image"
+            type="button"
+            class="btn-round btn-left"
+            id="previous-image"
+          ></button>
+          <div>
+            <img src="" alt="Displayed image" id="image" />
+          </div>
+          <button
+            title="Next image"
+            type="button"
+            class="btn-round btn-right"
+            id="next-image"
+          ></button>
+        </div>
+        <h2 class="image-info">
+          <span id="title">Title</span>
+          <span class="gradient-text">by</span>
+          <span id="author">Author</span>
+        </h2>
+        <p class="date-info">
+          uploaded at <span id="upload-date">2024-09-22</span>
+        </p>
+      </div>
+      <div id="no-image" class="no-content neumorphism-out">No images yet.</div>
+      <div id="add-comment" class="neumorphism-out requires-image">
+        <div class="form-title">
+          <label title="Show/hide the form" class="toggle-show">
+            <input type="checkbox" />
+          </label>
+          Add a comment
+        </div>
+        <form id="add-comment-form" class="input-form">
+          <input
+            type="text"
+            id="comment-author-input"
+            class="text-input neumorphism-in"
+            name="comment-author"
+            placeholder="Your name"
+            required
+          />
+          <textarea
+            rows="4"
+            id="comment-content-input"
+            class="text-input neumorphism-in"
+            name="comment-content"
+            placeholder="Your comment"
+            required
+          ></textarea>
+          <button type="submit" title="Submit comment" class="btn">
+            Submit
+          </button>
+        </form>
+      </div>
+      <div class="requires-image">
+        <div id="comments-title">
+          <button
+            type="button"
+            title="Newer comments"
+            class="btn-round btn-left"
+            id="previous-comments"
+          ></button>
+          <span>Comments</span>
+          <button
+            type="button"
+            title="Older comments"
+            class="btn-round btn-right"
+            id="next-comments"
+          ></button>
+        </div>
+      </div>
+      <div id="no-comment" class="no-content neumorphism-out requires-image">
+        No comments yet.
+      </div>
+
+      <div id="comment-list" class="requires-image">
+        <!--
+        <div class="comment neumorphism-out">
+          <div class="avatar"></div>
+          <div class="comment-container">
+            <div class="author-and-date">
+              <div class="username">Alice Wonderland</div>
+              <div class="comment-date">2024-09-22</div>
+            </div>
+            <div class="comment-content">
+              ipsum lorem ipsum lorem ipsum lorem ipsum
+            </div>
+          </div>
+          <button
+            type="button"
+            title="Delete this comment"
+            class="btn-round btn-delete"
+          ></button>
+        </div>
+        -->
+      </div>
+    </main>
+  </body>
+</html>

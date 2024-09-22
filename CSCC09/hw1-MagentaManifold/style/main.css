@@ -1,0 +1,51 @@
+:root {
+  --background: #e0e0e0;
+  --neumorpohism-shadow-dark: #c5c5c5;
+  --neumorpohism-shadow-light: #fbfbfb;
+  --theme: #f953c6;
+  --text-color: #444444;
+}
+
+body {
+  margin: 0 0 20px 0;
+  background: var(--background);
+  font-family: monospace;
+  text-align: left;
+  color: var(--text-color);
+}
+
+main {
+  width: clamp(min(350px, calc(100vw - 40px)), 60%, 800px);
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.no-content {
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: darkgray;
+}
+
+.gradient-text {
+  background: linear-gradient(75deg, #f953c6, #b91d73);
+  background-clip: text;
+  color: transparent;
+}
+
+.neumorphism-out {
+  background: var(--background);
+  box-shadow:
+    8px 8px 16px var(--neumorpohism-shadow-dark),
+    -8px -8px 16px var(--neumorpohism-shadow-light);
+}
+
+.neumorphism-in {
+  background: var(--background);
+  box-shadow:
+    inset 4px 4px 8px var(--neumorpohism-shadow-dark),
+    inset -4px -4px 8px var(--neumorpohism-shadow-light);
+}
